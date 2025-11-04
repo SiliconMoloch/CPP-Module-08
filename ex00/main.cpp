@@ -22,7 +22,7 @@ int	main(int argc, const char* argv[])
 		return (1);
 	try
 	{
-			(void)easyfind(v, integer_to_find);
+			easyfind(v, integer_to_find);
 	}
 	catch (const std::exception& e)
 	{
