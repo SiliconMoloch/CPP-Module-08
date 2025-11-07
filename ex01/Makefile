@@ -12,7 +12,7 @@ DEPFLAGS	= -MT $@ -MMD -MP -MF $(DEPENDS_DIR)$*.d
 all: ${NAME}
 	@echo "Building done: ${NAME} is ready."
 
-${OBJECTS_DIR}%.o : %.cpp Makefile | ${DEPENDS_DIR} ${OBJECTS_DIR}
+${OBJECTS_DIR}%.o : %.cpp | ${DEPENDS_DIR} ${OBJECTS_DIR}
 	@echo "Compiling $< ..."
 	@${CXX} ${CXX_FLAGS} ${DEPFLAGS} -c $< -o $@
 
@@ -33,7 +33,6 @@ fclean: clean
 	@echo "Deleting executables, objects and dependency files..."
 	@rm -f ${NAME}
 	@echo "Executables, objects and dependency files deleted."
-
 re: fclean all
 	@echo "🔄"
 
