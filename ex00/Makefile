@@ -12,7 +12,7 @@ DEPFLAGS	= -MT $@ -MMD -MP -MF $(DEPENDS_DIR)$*.d
 all: ${NAME}
 	@echo "Building done: ${NAME} is ready."
 
-${OBJECTS_DIR}%.o : %.cpp Makefile | ${DEPENDS_DIR} ${OBJECTS_DIR}
+${OBJECTS_DIR}%.o : %.cpp | ${DEPENDS_DIR} ${OBJECTS_DIR}
 	@echo "Compiling $< ..."
 	@${CXX} ${CXX_FLAGS} ${DEPFLAGS} -c $< -o $@
 
