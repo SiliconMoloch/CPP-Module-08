@@ -22,7 +22,7 @@ int	main(int argc, const char* argv[])
 		return (1);
 	}
 
-	Span				that(N);
+	Span				that;
 	Span				no_this_instead(that);
 	Span				nevermind = no_this_instead;	
 	std::vector<int>	v;
