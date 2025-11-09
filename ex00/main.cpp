@@ -1,6 +1,5 @@
 #include "Easyfind.hpp"
 #include <vector>
-#include <iostream>
 
 int			main(int argc, const char* argv[]);
 static void	parse_and_load_arguments_into_(std::vector<int> *v, 
@@ -49,7 +48,7 @@ static void	parse_and_load_arguments_into_(std::vector<int> *v,
 			std::cout << element 
 			<< " does not fit into an integer. Dismissed." << std::endl;
 		else
-			v->push_back(element);
+			v->push_back(static_cast<int>(element));
 	}
 }
 
