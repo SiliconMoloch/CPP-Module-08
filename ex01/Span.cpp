@@ -1,6 +1,5 @@
 #include "Span.hpp"
 #include <algorithm>
-#include <iostream>
 
 Span::Span(unsigned int N) : _maxSize(N)
 
@@ -100,8 +99,7 @@ unsigned long	Span::longestSpan(void) const
 Span::Span(void) : _maxSize(0)
 
 {
-	std::cout << _numbers.size();
-
+	
 }
 
 Span::Span(const Span& other) : _maxSize(other._maxSize),

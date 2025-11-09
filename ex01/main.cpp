@@ -14,7 +14,6 @@ int	main(int argc, const char* argv[])
 		return (1);
 	}
 
-	srand((unsigned int)time(0));
 	unsigned int const	N = parse_(argv[1]);
 	if (!N)
 	{
@@ -22,11 +21,12 @@ int	main(int argc, const char* argv[])
 		return (1);
 	}
 
-	Span				that;
+	Span				that(N);
 	Span				no_this_instead(that);
 	Span				nevermind = no_this_instead;	
 	std::vector<int>	v;
 
+	srand((unsigned int)time(0));
 	try
 	{
 		for (unsigned int i = 0; i < N; ++i)
@@ -49,8 +49,7 @@ static unsigned int	parse_(const char* arg)
 	char				*end;
 	unsigned long const	ulong_to_prevent_overflow = strtoul(arg, &end, 10);
 
-	if (*end ^ '\0' || 
-		ulong_to_prevent_overflow > INT_MAX)
+	if (*end ^ '\0' || ulong_to_prevent_overflow > INT_MAX)
 		return (0);
 	return (static_cast<unsigned int>(ulong_to_prevent_overflow));
 }
